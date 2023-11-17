@@ -1,12 +1,10 @@
 "use stirct";
 
-//get html elements
 const locationList = document.querySelector("#locationList");
 const parkTypeList = document.querySelector("#parkTypeList");
 
-//const nationalParksTable = document.querySelector("#nationalParksTable");
 const nationalParksTableBody = document.querySelector("#nationalParksTableBody");
-//create functions to handle events
+
 function loadLocationList() {
   for (const location of locationsArray) {
     let option = document.createElement("option");
@@ -93,20 +91,16 @@ function searchByParkType() {
   loadParksTable(parks);
 }
 
-//wire up functions to events
-
 window.onload = function () {
   loadParkTypeList();
   loadLocationList();
-  
-  //loadParksTable();
 };
 
 locationList.onchange = function () {
   nationalParksTableBody.innerHTML = " ";
   searchByLocation();
-} 
+};
 parkTypeList.onchange = function () {
   nationalParksTableBody.innerHTML = " ";
   searchByParkType();
-} 
+};
